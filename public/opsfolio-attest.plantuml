@@ -1,0 +1,137 @@
+@startuml
+
+title Third Party Risk Assessement with Netspective SPSAS
+autonumber
+
+'Prioritization
+'Priority 1. Assessee organizations
+'Good questions for analysis.
+'Ability to share and review within their organization.
+
+'Priority 2. Assessor organizations (CE).
+'They may not have a user interface to login to the system, but they will get summary reports to inform about the assessments.
+
+'Priority 3. Analysts (Nelson Mullins/Netspective) Tools.
+'Tools for the analysis and assessments.
+
+actor "Nelson Mullins" as NMRS
+actor "Netspective" as Netspective
+
+actor "Case Coordinator" as ccoord
+
+participant "NMRS CRM" as crm
+
+actor "Assessor Organization A\n(CE)" as assessorA
+
+box "Assessee Organization (BA)" #lightblue
+    actor "Assessee Point of Contact" as ax
+    actor Responder1
+    actor Responder2
+    note right Responder1
+        Assessee organization
+        members can share questionnaire
+        and save drafts before submitting
+    end note
+end box
+
+actor "Assessor Organization B\n(CE)" as assessorB
+
+box "Netspective SPSAS" #FFAAAA
+    participant "Questionnaire" as quest
+    database "Data Store" as dataStore
+    database "SPSAS Drive" as efssDrive
+    participant "Case Manager" as caseMgr
+    participant "BI App" as bi
+end box
+
+actor "Security Analyst" as secAnalyst
+actor "Legal Analyst" as legalAnalyst
+
+'Two options can be handled here.
+'1. CE requires assessment of BA
+'2. BA as part of their contract agreement requires an assessment done
+
+alt Assessor (CE) requires assessment of BA
+    assessorA -> NMRS: Contact Nelson Mullins to do assessment on Assessee Organization
+    assessorA -> NMRS: Provide contact information of the assessee
+
+else Assessee requires assessment to be done
+    ax -> NMRS: Contact Nelson Mullins to do assessment
+end
+
+NMRS -> Netspective: Share customer details
+note right NMRS
+    TBD: Define the process
+    by which Nelson Mullins shares
+    customer details with Netspective
+end note
+
+Netspective -> crm: Add assessee \ndetails to CRM
+
+ccoord -> crm: Generate (token)\n for assessee
+note over crm
+    Token and questionnaire type
+    is mapped to assessee
+end note
+
+crm -> ax: Send shortened link to assessee
+
+'Assessors may not be interested in sending the links to the Assessees.
+'NMRS/Netspective will send the link to the Assessee.
+
+== Response ==
+group Create response
+    ax -> Responder1: Assign users to \nprovide response
+    Responder1 <-> Responder2: Share questionnaire \nforms and add \nsupporting documents
+    Responder1 <-> Responder2: Save drafts
+end group
+ax -> quest: Submit response for review
+quest -> efssDrive: Store documents
+quest -> dataStore: Save response instance \n(questionnaire, response, \nmetadata)
+== Response ==
+
+== Analysis and assessments ==
+note over caseMgr: TBD: Provide authenticated \naccess to Analysts
+ccoord -> secAnalyst: Provide analysts with \nCase Manager system \naccess
+ccoord -> legalAnalyst: Provide analysts with \nCase Manager system \naccess
+secAnalyst -> caseMgr: Access Case Manager system to \nreview and insert comments
+legalAnalyst -> caseMgr: Access Case Manager system to \nreview and insert comments
+
+caseMgr -> dataStore: Fetch assessment \ndata from data store
+secAnalyst -> caseMgr: Review and insert comments
+secAnalyst -> caseMgr: Complete the assessment \n and sign off
+
+legalAnalyst -> caseMgr: Review and insert comments
+caseMgr -> dataStore: Update assessment \ndata with comments and \nscores
+
+note over caseMgr
+    Case Manager captures
+    metadata to show statistics of
+    assessments and scores.
+    This will include information
+    about reviewes, analysis etc.
+end note
+
+== Analysis and assessments ==
+
+bi --> dataStore: Fetch data to display \nheat maps based on the scores
+ax -> bi: See their own assessment reports and gap analysis
+ax -> NMRS: Contact Nelson Mullins for risk mitigations
+ax -> NMRS: Assesse can sign off to show their information to Assessors
+
+note right assessorA
+    Option for Assessor
+    to see risk data
+end note
+assessorA -> bi: Access reports and heat maps of the assessees assessed.
+
+ax -> Netspective: Opsfolio pen testing and ongoing, \nbottom-up analysis and asset inventory
+
+assessorB -> ax: Request assessment information
+note right ax
+    Assessee can share assessment
+    information with other assessors
+end note
+ax -> assessorB: Share assessment information
+
+@enduml

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="generator" content="Hugo 0.40.3" />
+    <meta name="description" content="Generation of diagram and flowchart from text in a similar manner as markdown">
+<meta name="author" content="Mathieu Cornic">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+
+    <title>test :: Netspective Strategy &amp; Planning</title>
+    
+    
+    <link href="/css/nucleus.css?1527061942" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1527061942" rel="stylesheet">
+    <link href="/css/hybrid.css?1527061942" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1527061942" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1527061942" rel="stylesheet">
+    <link href="/css/horsey.css?1527061942" rel="stylesheet">
+    <link href="/css/theme.css?1527061942" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1527061942" rel="stylesheet">
+    
+      <link href="/css/theme-netspective.css?1527061942" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1527061942"></script>
+    
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{ 
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <img src="/img/branding/attest-logo-inverse.png"/>
+<div style="color:lightgoldenrodyellow">
+    Strategy &amp; Planning
+</div>
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fa fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fa fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1527061942"></script>
+<script type="text/javascript" src="/js/horsey.js?1527061942"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1527061942"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+       
+      
+      
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fa fa-fw fa-history"></i> Clear History</a></li>         
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      &copy; 1997-2018 Netspective
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable sticky-parent">
+              
+
+        
+        <div id="body-inner">
+          
+
+        
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
+</span>
+
+ 
+
+
+<p><a href="https://mermaidjs.github.io/">Mermaid</a> is a library helping you to generate diagram and flowcharts from text, in a similar manner as Markdown.</p>
+
+<p>Just insert your mermaid code in the <code>mermaid</code> shortcode and that&rsquo;s it.</p>
+
+<h2 id="attest-project-roadmap-and-project-plan">Attest Project Roadmap and Project Plan</h2>
+
+<pre><code>{{&lt;mermaid&gt;}}
+gantt
+   dateFormat  MM-DD-YYYY
+
+   title Attest Roadmap and Project Plan
+
+  section Customer Onboarding
+    Demo Account Signup                                     :crit,done, CustomerOnboarding-task2,04-25-2018,04-30-2018
+    Verification                                            :crit,done,CustomerOnboarding-task2, 05-02-2018,05-03-2018 
+    User Onboarding Comparable Analysis                     :crit,active,CustomerOnboarding-task3, 05-10-2018,05-12-2018 
+    Prepare User onboarding Demo Questionnaire Preparation  :active,05-21-2018,05-22-2018
+
+
+  section LHC Form Builder
+    Questionnaire Label Edit Feature                        :crit,done, LHCFormBuilder-task1, 04-16-2018,04-20-2018
+    Questionnaire Label Edit Verification                   :crit,done, LHCFormBuilder-task2, 05-02-2018,05-03-2018
+    Basic Attest LHC formbuilder with textbox.listbox       :done,LHCFormBuilder-task3,05-02-2018,05-08-2018
+    Attest LHC formbuilder with skiplogic                   :done,LHCFormBuilder-task4, after LHCFormBuilder-task3 , 2d
+    Attest LHC formbuilder with Score                       :LHCFormBuilder-task5, after LHCFormBuilder-task4 ,2d
+    LHC formbuilder as a Angular Component                  :LHCFormBuilder-task6,05-08-2018,05-11-2018
+    Add Custom Score by Reviewer 29715                      :done,LHCFormBuilder-task7,05-14-2018,05-15-2018
+    Verify Custom Score by Reviewer 29715                   :done,LHCFormBuilder-task7,05-15-2018,05-16-2018
+    Load Questionnaire From Offline Saved Questionnaire 26070:done,LHCFormBuilder-task8,05-17-2018,05-23-2018
+    Verification of Load Questionnaire From Offline Saved Questionnaire 26070:active,LHCFormBuilder-task8,05-23-2018,05-23-2018
+
+
+  section Demo Server
+    Demo Server Update                                      :done,DemoServer-task1 , 05-02-2018,05-03-2018
+    DemoAccountSignUp                                       :done,DemoServer-task2, 05-02-2018,05-03-2018
+    ShiftingScript Implementation                           :done,DemoServer-task3,05-02-2018,05-03-2018
+    shifting Script Verification                            :crit,done,DemoServer-task4, after DemoServer-task3,3d
+
+  section Reminders
+    Account Preferences                                     :done,Reminder-task1, 04-25-2018,04-26-2018 
+    User Preferences                                        :done,Reminder-task2, after Reminder-task1, 1d
+    Automatic Reminders 26742                               :done, Reminder-task3, 05-02-2018,05-09-2018
+    Automatic Reminders Verification 26742                  :Reminder-task4 after Reminder-task3, 1d
+    Automatic Reminders Templates using Thirdparty Components:Reminder-task5,after Reminder-task4, 3d
+
+  section Security Data Collection
+    Create Security Data Collection 29692                   :done,securityDataCollection-task1,05-09-2018,05-14-2018
+    Security Data Collection Update including description 29692:done,securityDataCollection-task2,05-21-2018,05-22-2018
+    Verification of Security Data Collection                :active,securityDataCollection-task2,05-22-2018,05-22-2018
+
+  Section Plugin Generator System
+    Generation of sample Plugin in Angular:read,05-22-2018,05-24-2018
+
+  section InsuranceWorkflow
+    Understand Business and prepare flow diagrams           :done,InsuranceWorkflow-task1,05-15-2018,05-16-2018
+    Prepare Insurance Questionnaire for demo                :done,InsuranceWorkflow-task2,after InsuranceWorkflow-task1,1d
+    Prepare Insurance Questionnaire with Joget and check Feasibility of Use case:done,InsuranceWorkflow-task3,after InsuranceWorkflow-task2,1d
+
+  section Configurations
+    Configuration Settings need to customized through GIT repo 29778:active,05-04-2018,3d
+    Tenant based email templates settings 27273             :read,2d
+
+  section Usability
+    Create Menu Management for Super Admin 29549 ,29777        :done,usability-task1,04-27-2018,05-10-2018
+
+  section Weekends
+    weekend:done,05-05-2018,05-06-2018
+    weekend:done,05-12-2018,05-13-2018
+    weekend:done,05-19-2018,05-20-2018
+{{&lt; /mermaid &gt;}}
+</code></pre>
+
+<p>render as</p>
+
+<link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script defer src="/mermaid/mermaid.js">mermaid.initialize({startOnLoad:true});</script>
+<div class="mermaid" align="center" >
+gantt
+       dateFormat  MM-DD-YYYY
+   
+       title Attest Roadmap and Project Plan
+
+      section Customer Onboarding
+        Demo Account Signup                                     :crit,done, CustomerOnboarding-task2,04-25-2018,04-30-2018
+        Verification                                            :crit,done,CustomerOnboarding-task2, 05-02-2018,05-03-2018 
+        User Onboarding Comparable Analysis                     :crit,active,CustomerOnboarding-task3, 05-10-2018,05-12-2018 
+        Prepare User onboarding Demo Questionnaire Preparation  :active,05-21-2018,05-22-2018
+
+
+      section LHC Form Builder
+        Questionnaire Label Edit Feature                        :crit,done, LHCFormBuilder-task1, 04-16-2018,04-20-2018
+        Questionnaire Label Edit Verification                   :crit,done, LHCFormBuilder-task2, 05-02-2018,05-03-2018
+        Basic Attest LHC formbuilder with textbox.listbox       :done,LHCFormBuilder-task3,05-02-2018,05-08-2018
+        Attest LHC formbuilder with skiplogic                   :done,LHCFormBuilder-task4, after LHCFormBuilder-task3 , 2d
+        Attest LHC formbuilder with Score                       :LHCFormBuilder-task5, after LHCFormBuilder-task4 ,2d
+        LHC formbuilder as a Angular Component                  :LHCFormBuilder-task6,05-08-2018,05-11-2018
+        Add Custom Score by Reviewer 29715                      :done,LHCFormBuilder-task7,05-14-2018,05-15-2018
+        Verify Custom Score by Reviewer 29715                   :done,LHCFormBuilder-task7,05-15-2018,05-16-2018
+        Load Questionnaire From Offline Saved Questionnaire 26070:done,LHCFormBuilder-task8,05-17-2018,05-23-2018
+        Verification of Load Questionnaire From Offline Saved Questionnaire 26070:active,LHCFormBuilder-task8,05-23-2018,05-23-2018
+        
+
+      section Demo Server
+        Demo Server Update                                      :done,DemoServer-task1 , 05-02-2018,05-03-2018
+        DemoAccountSignUp                                       :done,DemoServer-task2, 05-02-2018,05-03-2018
+        ShiftingScript Implementation                           :done,DemoServer-task3,05-02-2018,05-03-2018
+        shifting Script Verification                            :crit,done,DemoServer-task4, after DemoServer-task3,3d
+
+      section Reminders
+        Account Preferences                                     :done,Reminder-task1, 04-25-2018,04-26-2018 
+        User Preferences                                        :done,Reminder-task2, after Reminder-task1, 1d
+        Automatic Reminders 26742                               :done, Reminder-task3, 05-02-2018,05-09-2018
+        Automatic Reminders Verification 26742                  :Reminder-task4 after Reminder-task3, 1d
+        Automatic Reminders Templates using Thirdparty Components:Reminder-task5,after Reminder-task4, 3d
+
+      section Security Data Collection
+        Create Security Data Collection 29692                   :done,securityDataCollection-task1,05-09-2018,05-14-2018
+        Security Data Collection Update including description 29692:done,securityDataCollection-task2,05-21-2018,05-22-2018
+        Verification of Security Data Collection                :active,securityDataCollection-task2,05-22-2018,05-22-2018
+
+      Section Plugin Generator System
+        Generation of sample Plugin in Angular:read,05-22-2018,05-24-2018
+      
+      section InsuranceWorkflow
+        Understand Business and prepare flow diagrams           :done,InsuranceWorkflow-task1,05-15-2018,05-16-2018
+        Prepare Insurance Questionnaire for demo                :done,InsuranceWorkflow-task2,after InsuranceWorkflow-task1,1d
+        Prepare Insurance Questionnaire with Joget and check Feasibility of Use case:done,InsuranceWorkflow-task3,after InsuranceWorkflow-task2,1d
+
+      section Configurations
+        Configuration Settings need to customized through GIT repo 29778:active,05-04-2018,3d
+        Tenant based email templates settings 27273             :read,2d
+
+      section Usability
+        Create Menu Management for Super Admin 29549 ,29777        :done,usability-task1,04-27-2018,05-10-2018
+        
+      section Weekends
+        weekend:done,05-05-2018,05-06-2018
+        weekend:done,05-12-2018,05-13-2018
+        weekend:done,05-19-2018,05-20-2018
+</div>
+
+<h2 id="flowchart-example">Flowchart example</h2>
+
+<pre><code>{{&lt;mermaid align=&quot;left&quot;&gt;}}
+graph LR;
+    A[Hard edge] --&gt;|Link text| B(Round edge)
+    B --&gt; C{Decision}
+    C --&gt;|One| D[Result one]
+    C --&gt;|Two| E[Result two]
+{{&lt; /mermaid &gt;}}
+</code></pre>
+
+<p>renders as</p>
+
+<link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script defer src="/mermaid/mermaid.js">mermaid.initialize({startOnLoad:true});</script>
+<div class="mermaid" align="left" >
+graph LR;
+	A[Hard edge] -->|Link text| B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+</div>
+
+<h2 id="sequence-example">Sequence example</h2>
+
+<pre><code>{{&lt;mermaid&gt;}}
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;John: Hello John, how are you?
+    loop Healthcheck
+        John-&gt;John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts &lt;br/&gt;prevail...
+    John--&gt;Alice: Great!
+    John-&gt;Bob: How about you?
+    Bob--&gt;John: Jolly good!
+{{&lt; /mermaid &gt;}}
+</code></pre>
+
+<p>renders as</p>
+
+<link href="/mermaid/mermaid.css" type="text/css" rel="stylesheet"/>
+<script defer src="/mermaid/mermaid.js">mermaid.initialize({startOnLoad:true});</script>
+<div class="mermaid" align="center" >
+sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail...
+    John-->Alice: Great!
+    John->Bob: How about you?
+    Bob-->John: Jolly good!
+</div>
+
+<img class="plantUML" src="/img/generated/diagrams/opsfolio-attest.png" align="center"/>
+	
+  
+        
+        </div> 
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+            
+        
+        
+        
+
+
+        
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1527061942"></script>
+    <script src="/js/perfect-scrollbar.min.js?1527061942"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1527061942"></script>
+    <script src="/js/jquery.sticky-kit.min.js?1527061942"></script>
+    <script src="/js/featherlight.min.js?1527061942"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1527061942"></script>
+    <script src="/js/highlight.pack.js?1527061942"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1527061942"></script>
+    <script src="/js/learn.js?1527061942"></script>
+    <script src="/js/hugo-learn.js?1527061942"></script>
+
+    <link href="/mermaid/mermaid.css?1527061942" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1527061942"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>

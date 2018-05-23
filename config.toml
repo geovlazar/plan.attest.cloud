@@ -1,0 +1,20 @@
+baseURL = "/"
+languageCode = "en-US"
+defaultContentLanguage = "en"
+
+title = "Attest Strategy & Planning"
+theme = "learn"
+metaDataFormat = "yaml"
+defaultContentLanguageInSubdir= true
+
+[params]
+  themeVariant = "blue"
+  editURL = "https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/"
+  description = "Plan Site for RoadMap of Attest"
+  author = "Geo V L"
+  showVisitedLinks = true
+
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
